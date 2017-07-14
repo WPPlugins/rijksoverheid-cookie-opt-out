@@ -1,0 +1,67 @@
+/*   *****************************************************
+ *
+ *   RIJKSOVERHEID.NL COOKIE OPT OUT
+ *
+ *   Presentation layer for screen and projection media
+ *   Cookiebar stylesheet for able web devices
+ *
+ *   This should comply with Dutch web guidelines v2 and
+ *   W3C CSS3 standards.
+ *   See: http://versie2.webrichtlijnen.nl/
+ *
+ *   location: /presentation/screen-cookies.css
+ *   version:  2.0
+ *   date:     19-11-2013
+ *
+ *   *****************************************************
+ */
+
+
+
+/*   *****************************************************
+ *
+ *   CODING CONVENTIONS
+ *
+ *   - indent property-value pairs using double spaces;
+ *   - place selectors, opening and closing brackets and
+ *     property-value pairs on their own, separate lines;
+ *   - use a consistent property order (as shown below);
+ *   - use shorthand for font, border, padding, margin
+ *     and background properties if possible;
+ *   - use full six digit hex codes for colours;
+ *   - work from general to specific (in order of
+ *     increasing specificity);
+ *   - avoid use of !important (preferably limited to
+ *     Internet Explorer stylesheets only!);
+ *   - use percentages to declare relative font sizes;
+ *   - omit units when declaring line-heights as not to
+ *     break inheritance of relative line-height.
+ *
+ */
+
+.cookie
+{
+  width: 960px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  background: url(../images/cookiebar-shadow-end.png) no-repeat 0 100%; /* Bottom background with shadow */
+  position: relative;
+}
+.cookie p
+{
+  margin: 0;
+  padding: 8px 20px 12px;
+  background: url(../images/cookiebar-shadow-repeater.png) repeat-y; /* Main lightgreen background with shadow */
+  font: 1em/1.2 'Verdana','Geneva',sans-serif;
+}
+.cookie p a
+{
+  text-decoration: underline;
+}
+
+/* IE Fixes */
+* html .cookie
+{
+  position: absolute;
+  height: 1%;
+}

@@ -1,0 +1,299 @@
+RIJKSOVERHEID COOKIE OPT-OUT
+HANDLEIDING TECHNISCHE IMPLEMENTATIE
+
+
+INHOUD
+
+Inleiding
+Bestanden in ZIP
+Werking Rijksoverheid Cookie Opt Out
+Integratie in eigen site
+Overzicht van opties
+Taalkeuze
+Beperkingen en known issues
+Bijlage A - voorbeeld callbackfunctie
+Bijlage B - gebruik opt-in voor meerdere domeinen
+
+
+
+INLEIDING
+
+De Rijksoverheid cookie OPT-OUT is een generieke oplossing om te kunnen voldoen aan de cookiebepaling in de Telecommunicatiewet. De oplossing grijpt zo min mogelijk in in bestaande code, vereist geen extra HTML code in de pagina's en is geheel te stijlen met CSS.
+
+
+
+BESTANDEN IN ZIP
+
+De Rijksoverheid Cookie OPT-OUT bestaat in essentie uit een javascript, een stylesheet en een los scriptvoorbeeld om de balk aan te roepen. Alle kunnen opgenomen worden in bestaande front-endcode van een website. Daarmee zijn geen template-aanpassingen (HTML wijzigingen) vereist.
+
+Voor implementatie van de opt-in zijn alleen de volgende bestanden van belang:
+- cookies.js
+- cookiebar-init.js
+- screen-cookies.css
+
+
+Een overzicht van alle bestanden in de zip staat hieronder, inclusief de bestanden voor het voorbeeld.
+
+ZIP
++- behaviour
+|  +- cookiebar-init.js
+|  +- cookies.js
+|  +- cookies.min.js (minified versie)
+|
++- content
+|  +- (alle inhoudelijke afbeeldingen van voorbeeldimplementatie)
+|
++- presentation
+|  +- images
+|  |  +- cookie.png (voor serverregistratie cookie)
+|  |  +- (alle afbeeldingen voor presentatie)
+|  |
+|  +- screen-cookies.css
+|  +- screen-cookies.min.css (minified versie)
+|  +- screen-ie6.css (alleen voor voorbeeld)
+|  +- screen-ie7.css (alleen voor voorbeeld)
+|  +- screen.css (alleen voor voorbeeld)
+|
++- handleiding technische implementatie (dit bestand)
++- Documentatie-Rijksoverheid-Cookie-opt-in-v1.0.pdf
++- voorbeeld.html (voorbeeld voor implementatie)
+
+ 
+
+AFHANKELIJKHEID VAN JQUERY
+
+De Rijksoverheid Cookie OPT-OUT is niet meer afhankelijk van jQuery om te zorgen dat de cookiebalk ook op mobiele telefoons en tablets kan worden getoond zonder veel extra dataverkeer.
+
+ 
+
+WERKING RIJKSOVERHEID COOKIE OPT IN
+
+De Rijksoverheid cookie OPT-OUT bestaat uit twee (min of meer losse) onderdelen: het RO.cookies object die de cookies kan lezen en schrijven in de browser, en RO.cookiebar, dat de feitelijke balk en het wegschrijven van de keuze voor zijn rekening neemt. Voor de cookie OPT-OUT balk (RO.cookiebar) moet eerst RO.cookies worden geladen. Daarna wordt de balk zelf aangeroepen met een set opties.
+
+A - Cookies opzetten
+
+RO.cookies.init();
+
+Bij de cookies wordt op basis van window.location het toplevel domein herleid. Alle cookies worden op dit toplevel domein gezet, met de root als pad.
+
+
+
+B - cookie OPT-OUT balk aanroepen
+
+RO.cookiebar.init(options);
+
+Voor alle opties bij de cookie OPT-OUT balk zelf, zie hieronder bij de totale lijst. De opties zijn een object, conform de standaardmanier om jQuery options op te geven.
+
+
+De cookie-opt-in-balk kan bij het laden van de pagina worden onderdrukt met de class 'nocookiebar' op het body-element. Als deze class in de HTML of met een script (voor het laden van de cookie-opt-in-balk) wordt geplaatst, zal de balk niet worden getoond. Daarnaast checkt het script zelf nog een aantal andere voorwaarden.
+
+
+
+AANPASSEN TEKSTEN
+
+Alle labels en teksten in de opt-in kunnen worden meegegeven als optie in de aanroep van de cookiebar. In het javascript cookiebar-init.js staan voorbeeldteksten voor een nederlandstalige site en een engelstalige site.
+
+Het script kiest standaard de Nederlandse tekst, maar schakelt automatisch op basis van de xml:lang attribuut op het HTML element. Indien gewenst kan dit worden overschreven door in de opties de taal ook op te geven:
+
+RO.cookiebar.init({ lang: 'EN-UK' });
+
+
+
+AANPASSEN VORMGEVING
+
+De vormgeving van de cookie OPT-OUT kan worden aangepast in het stylesheet screen-cookies.css.
+
+
+
+INTEGRATIE IN EIGEN WEBSITE
+
+Om de Rijksoverheid cookie OPT-OUT te integreren in een website zijn twee scenario's mogelijk:
+
+A - Opnemen in bestaande front-end (aan te raden)
+
+1. Neem de (minified) CSS van screen-cookies.css op in de bestaande schermstylesheet
+2. Neem de minified librarycode van cookies.js op in een bestaand js bestand 
+3. Neem de initialisatiecode uit cookiebar-init.js op in het eigen hoofdscriptbestand en zorg dat deze code wordt uitgevoerd nadat de scripts uit cookies.js zijn uitgevoerd.
+4. Bij testen in de doelwebsite zou de cookie OPT-OUT moeten verschijnen.
+5. De teksten en vormgeving van de OPT-OUT kunnen worden aangepast in het script en in de stylesheet (zie boven)
+
+
+B - Losse bestanden (backup optie)
+
+1. Plaats de bestanden screen-cookies.css en cookies.js op een handige plek op de webserver
+2. Link naar de bestanden vanuit het sitetemplate
+3. Neem de initialisatiecode uit cookiebar-init.js op in eigen code, of zet dit bestand na aanpassing ook op de server en link ernaartoe
+4. Bij testen in de doelwebsite zou de cookie OPT-OUT moeten verschijnen.
+5. De teksten en vormgeving van de OPT-OUT kunnen worden aangepast in het script en in de stylesheet (zie boven)
+
+Ter verduidelijking van de code is in het voorbeeld methode B gebruikt. 
+
+Merk op dat cookies niet kunnen worden gezet of gelezen bij het openen van het voorbeeld als lokaal bestand. De cookie OPT-OUT voorbeeld dient op een webserver te worden gezet of op een lokale server met echte domeinnaam (dus niet 'localhost', maar een domeinnaam die wijst naar 127.0.0.1).
+
+ 
+
+OPTIES BIJ AANROEPEN
+
+cookiename
+@string 'toestemmingvoorcookies'
+De naam van de cookie die wordt gezet, standaard 'toestemmingvoorcookies'. Als de website waarop de Rijksoverheid cookie OPT-OUT wordt ingezet al eerder een opt-in heeft gehad, kan hier de naam van de daarbij gebruikte cookie worden opgegeven, zodat de geldigheid van eerdere cookiekeuzen in stand blijft.
+
+
+cookievalues
+@object
+accept
+@string 'ja'
+
+deny
+@string 'nee'
+In dit object worden de twee waarden van de cookie OPT-OUT opgegeven. Ook hier geldt dat dit handig is om de accepteren/weigeren waarden van eventuele eerdere cookieoplossingen te hergebruiken.
+
+implicit
+@string 'ja'
+Deze waarde is extra toegevoegd omdat de OPT-OUT alleen geldt voor cookies op het eigen domein voor statistiekverzameling of functioneel gebruik. Daarvoor geldt dat de bezoeker impliciet akkoord gaat door gebruik van de site, mits de cookiemelding is getoond.
+
+
+lifespan
+@integer 5*365
+De levensduur van het cookie dat wordt gezet om de keuze in op te slaan. Standaard vijf jaar.
+
+
+NL-NL
+@object
+question
+change
+accept
+deny
+close
+Alle titels, teksten en buttonlabels kunnen worden opgegeven in een object per taaloptie. Deze objecten hebben als hoofdobject altijd de xml:lang waarde van de betreffende taal; zie ook hieronder bij taalkeuze. In de titels en buttonlabels wordt geen HTML toegepast; in alle andere teksten kan wel HTML worden gebruikt (zie de standaardwaarden van de teksten). Dit geeft een zo groot mogelijke vrijheid bij het eventueel aanpassen van de opt-in balk aan specifieke situaties.
+
+
+callback (result)
+@function (@string 'accept'|'deny')
+Met deze callbackfunctie wordt het feitelijke cookie gezet. Deze functie wordt uitgevoerd nadat de bezoeker een keuze maakt voor ja of nee. Het is mogelijk extra maatwerkacties toe te voegen aan de keuzes.
+In de variabele result wordt de keuze meegegeven ('accept' of 'deny').
+
+NB: het is prima mogelijk om eigen parameters via de options door te geven en deze vervolgens in de callbackfunctie aan te halen. Een voorbeeld staat in cookiebar-init.js, waar met de optie 'cookieurl' een URL wordt opgegeven voor de afbeelding waarmee op de server de keuze kan worden gelogd.
+
+
+langcode
+@string ISO countrycode XML style
+Met deze parameter kan een harde keuze voor een taal worden meegegeven: NL-NL voor Nederlands. Alles in kapitalen (caps).
+
+ 
+
+TAALKEUZE
+
+Het script is geschikt voor verschillende talen. Omdat per taal een extra object kan worden meegegeven (bijvoorbeeld: 'NL-NL', 'EN-GB', 'DE-DE', 'NL-BE') en het script automatisch de taal kiest op basis van het xml-lang attribuut, kunnen meerdere taalversies met slechts een cookiebalkscript worden gerealiseerd.
+Als override is de parameter 'langcode' ingebouwd, waarmee de taalswitch kan worden overschreven met een vaste zelfgekozen waarde (uit de ISO landencodes).
+
+ 
+
+BEPERKINGEN EN KNOWN ISSUES
+
+Merk op dat een webbrowser op een lokale drive of op 'localhost' geen cookies kan plaatsen of lezen, zodat het voorbeeld in die situaties dus niet werkt!
+
+
+1.
+Met dit script kunnen gebruikers met een browser/user-agent zonder javascript (zelf uitgezet, of niet aanwezig) geen keuze maken en in die situaties wordt dus geen cookie gezet. Ook zoekmachines vallen in deze categorie.
+
+2.
+De Rijksoverheid cookie OPT-OUT is geen server-sided oplossing. Op de server kan natuurlijk wel het gezette cookie worden uitgelezen, zodat ook server-sided cookies na toestemming zouden kunnen worden toegepast.
+
+3.
+Het aanroepen van statistieken-code moet na toestemming gebeuren in de callback. Hierdoor wordt de pagina waar de bezoeker 'ja' kiest ook geteld. Een voorbeeld voor de callback staat in bijlage A.
+
+4.
+De gehele cookie OPT-OUT is getoetst aan de Webrichtlijnen, versie 1 en 2.
+
+
+BIJLAGE A
+
+Voorbeeld callbackfunctie
+
+'callback': function(result)
+{
+// If visitor agreed, we need to document this by setting a cookie and 
+// logging an URL with a unique code for legal reasons.
+var agent = navigator.userAgent.hashCode(),
+now = new Date(),
+timestamp = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), 
+now.getHours(), now.getMinutes(), now.getSeconds(), 
+now.getMilliseconds()),
+uniqueid = timestamp + agent.toString(),
+lifespan = RO.cookiebar.lifespan || 5*365,
+consent = RO.cookiebar.cookievalues[result],
+cookielog = new Image();
+
+if (result === "accept" || result === "implicit")
+{
+// If visitor consents, add unique id to consent and init statistics
+consent = consent + "." + uniqueid;
+if (typeof piwik === 'function') piwik();
+}
+
+// Set cookie
+RO.cookies.create(RO.cookiebar.cookiename,
+consent, RO.cookiebar.lifespan);
+
+// Request png image on url (with the unique code if consent is given) 
+cookielog.src = "//domein/pad/naar/cookie.png?" + 
+RO.cookiebar.cookiename + "=" + consent;
+}
+
+
+
+
+BIJLAGE B
+
+OPT-OUT voor meerdere domeinen
+
+Het is met de Rijksoverheid cookie OPT-OUT mogelijk om voor meer domeinen in een keer de toestemming te vragen en te bewaren. Dit kan zonder aanpassingen in de code zelf, door alle domeinen in de tekst te noemen, de callbackfunctie slim te gebruiken, en het zetten van het cookie serverside te doen via het opgevraagde plaatje:
+
+1. Domeinen noemen in teksten
+
+Neem in de teksten alle sites op waarvoor de OPT-OUT moet gelden, bijvoorbeeld:
+
+'Mogen domein1.nl, domein2.nl en domein3.nl <a href="/cookies/">cookies</a> op uw computer plaatsen om deze websites prettiger in het gebruik te maken?'
+
+2. Callbackfunctie
+
+'callback': function(result)
+{
+  // If visitor agreed, we need to document this by setting a cookie and 
+  // logging an URL with a unique code for legal reasons.
+  var agent = navigator.userAgent.hashCode(),
+      now = new Date(),
+      timestamp = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), 
+                           now.getHours(), now.getMinutes(), now.getSeconds(), 
+                           now.getMilliseconds()),
+      uniqueid = timestamp + agent.toString(),
+      lifespan = RO.cookiebar.lifespan || 5*365,
+      consent = RO.cookiebar.cookievalues[result],
+      cookielog,
+      cookieurls = {'domein1.nl/path/one/cookie.png', 
+                    'domein2.nl/cookie.png', 
+                    'domein3.nl/path/three/to/some/cookie.png'};
+  
+  if (result == "accept")
+  {
+    // If visitor consents, add unique id to consent and init statistics
+    consent = consent + "." + uniqueid;
+
+    // Start any statistics that need consent here...
+  }
+
+  // Request png image on url (with the unique code if consent is given) 
+  for (i = 0, j = domains.length; i < j; i++)
+  {
+    cookielog = new Image();
+    cookielog.src = '//' + cookieurls[i] + "?" + 
+                    RO.cookiebar.cookiename + "=" + consent;
+  }
+}
+
+
+3. Zet het cookie vanaf de server op basis van het request
+
+Zet op de plaatsen die in de callbackfunctie zijn opgegeven, op elk domein dus, een stukje code dat op basis van de opgevraagde URL een cookie plaatst via het http-protocol (via een temporary redirect, status 302), en vervolgens het eigenlijke plaatje stuurt met de gebruikelijke status 200.
+ 

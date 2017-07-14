@@ -1,0 +1,19 @@
+RIJKSOVERHEID COOKIE OPT-IN
+
+V1.0 - 24/10/2012
+Eerste versie.
+
+v1.1 - 20/11/2012
+Nieuw of verbeterd in deze versie:
+- Oplossing voor foutmelding in javascript bij lokaal gebruik van voorbeeld.
+- Check voor ondersteuning cookies verplaatst naar de rocookies plugin.
+- Check ingebouwd of de gekozen taal ook bestaat in de sets met vertalingen.
+- Handleiding technische implementatie bijgewerkt.
+- Extra bijlage in handleiding toegevoegd over opt-in voor meerdere domeinen.
+- Kleine aanvullingen op CSS voor lijsten om sitespecifieke CSS te overschrijven.
+
+v2.0 - 19/11/2013
+Nieuw of verbeterd in deze versie:
+- Niet meer afhankelijk van jQuery.
+- Handleiding technische implementatie bijgewerkt.
+- Vormgeving bijgewerkt.

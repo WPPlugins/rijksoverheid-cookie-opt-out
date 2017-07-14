@@ -1,0 +1,1067 @@
+/*   *****************************************************
+ *
+ *   RIJKSOVERHEID.NL
+ *   Official website of the Government of the Netherlands
+ *
+ *   For inquiries or comments, please use the online
+ *   contact form. Thank you.
+ *
+ *   Presentation layer fixes for MS Internet Explorer 7
+ *
+ *   This does not necessarily comply with W3C CSS2.1
+ *   standards, but should follow Dutch web guidelines.
+ *   See: http://www.webrichtlijnen.nl/
+ *   
+ *   location: /presentation/screen-ie7.css
+ *   version:  0.1
+ *   date:     04/29/2009
+ *
+ *   *****************************************************
+ */
+
+
+/*   *******************************************************   START @MEDIA SCREEN FORMATTING   */
+@media screen
+{
+  /*   *****************************************************
+   *
+   *   SET BASE FONT SIZE
+   */
+  html
+  {
+    font-size: 100%;
+  }
+  body
+  {
+    font-size: 68%;
+  }
+  sup,
+  sub
+  {
+    vertical-align: baseline;
+    position: relative;
+    top: .3em;
+    font-size: 80%;
+    font-weight: bold;
+  }
+  sup
+  {
+    top: -.6em;
+  }
+    
+  
+  /*   *****************************************************
+   *
+   *   COMMON CLASSES
+   *   Only include site-wide declarations here;
+   *   no specific rules for individual components!
+   *   
+   */
+  #content-column a.external img,
+  #introboard a.external img
+  {
+    bottom: -2px;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   TABLE FORMATTING
+   *   
+   */
+  caption
+  {
+    margin: 0;
+    padding: .8em 0;
+    color: #767676;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   LIST OF SENDERS
+   *   
+   */
+  .list-senders li
+  {
+    zoom: 1;
+    background-position: 0 .55em;
+  }
+  
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   LIST OF SEE ALSO LINKS
+   *   
+   */
+  .list-references li h3 a
+  {
+    zoom: 1;
+    background-position: 0 .55em;
+  }
+  .list-references li h3 a.external
+  {
+    zoom: 1;
+    background-position: -4000px .6em;
+  }
+  
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK LIST OF DEPARTMENTS
+   *   List of all ministries (departments) 
+   *   of the Dutch government.
+   *   
+   */
+  #main-column .list-departments ul
+  {
+    zoom: 1;
+    width: 912px;
+    margin-right: -20px;
+  
+  }
+  #main-column .list-departments li ul
+  {
+    width: auto;
+    margin: 0;
+  }
+  #main-column .list-departments li ul li
+  {
+    display: inline;
+    width: auto;
+    float: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /*   *****************************************************
+   *
+   *   ALPHABET INDEX (DEPARTMENT TOPICS PAGE)
+   *
+   */
+  #main-column .list-index,
+  #main-column .list-index .grid-three-columns,
+  #main-column .list-index ul
+  {
+    zoom: 1;
+  }
+  
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BREADCRUMB TRAIL
+   *
+   */
+  #breadcrumb
+  {
+    margin-bottom: 1.1em;
+  }
+  
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   LEADERBOARD / CRISISBOARD
+   *
+   */
+  #leaderboard
+  {
+    zoom: 1;
+    border-top: 20px solid #FFFFFF;
+  }
+  #leaderboard #breadcrumb
+  {
+    position: relative;
+    top: -20px;
+    margin-bottom: -10px;
+  }
+  #leaderboard .item-spotlight,
+  #leaderboard .insite-banner
+  {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+  }
+  .crisisboard
+  {
+    zoom: 1;
+    margin-bottom: -20px;
+    border-top: 20px solid #FFFFFF;
+  }
+  #leaderboard .attention-box
+  {
+    margin-bottom: 0;
+    border-bottom: 20px solid #FFF;
+  }
+
+
+  
+  /*   *****************************************************
+   *
+   *   INTROBOARD
+   *
+   */
+  #introboard
+  {
+    zoom: 1;
+  }
+  .department #introboard
+  {
+    border-top: none;
+  }
+  #introboard div p a.external img
+  {
+    float: none !important;
+    display: inline !important;
+    position: relative !important;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   SEARCH BOX
+   *
+   */
+  #search-form p
+  {
+    float: right;
+    border: none;
+    background-color: transparent;
+    zoom: 1;
+  }
+  #error-search-form p
+  {
+    float: left;
+    border: none !important;
+    background-color: transparent;
+    zoom: 1;
+  }
+  #search-form #search-keyword,
+  #error-search-form #error-search-keyword
+  {
+    height: 1.6em;
+    border: 1px solid #000;
+    border-right-width: 0;
+    margin-right: -4px;
+    background-color: #FFF;   
+  }
+  #search-form #search-submit,
+  #error-search-form #error-search-submit
+  {
+    position: relative;
+    height: 2.1em;
+    float: none;
+    overflow: visible;
+    border: 1px solid #000;
+  }
+
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: SEARCH SUMMARY
+   *
+   */
+  .block-form .main-search-box h3
+  {
+    display: inline;
+    width: 13.8em; /* was 117px */
+    height: 1%;
+    line-height: 1.4;
+  }
+  .block-form .main-search-box
+  {
+    position: relative;
+  }
+  .block-form .main-search-box p
+  {
+    height: 1.6em;
+    margin: 1em 0;
+  }
+  .block-form .main-search-box p a
+  {
+    top: -.2em;
+  }
+  .block-form .main-search-box p.filters-selected
+  {
+    display: block;
+    width: auto;
+    height: auto;
+    float: none;
+    position: relative;
+    line-height: 1.6;
+  }
+  .block-form .main-search-box p.filters-selected a
+  {
+    display: inline;
+    zoom: 1;
+    width: auto;
+    position: static;
+  }
+  #main-search-submit
+  {
+    border: none;
+    background: #CCE0F1 url(images/ie6-button-border-left.png) repeat-y;
+    line-height: 1.3;
+  }
+  #magazineboard .main-search-box
+  {
+    padding-bottom: 2em;
+  }
+  #magazineboard #main-search-submit,
+  #magazineboard #topic-search-submit
+  {
+    border: none;
+    background: #CCE0F1 url(images/ie6-button-border-left.png) repeat-y;
+    line-height: 1.5;
+    overflow: visible;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: SEARCH RESULTS
+   *
+   */
+  .search-results div h3
+  {
+    zoom: 1;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: PAGING
+   *
+   */
+  .paging 
+  {
+    zoom: 1;
+  }
+  
+  #content-column .paging li strong,
+  #content-column .paging li span,
+  #content-column .paging li a {
+    line-height: normal;
+  }
+  
+
+  /*   *****************************************************
+   *
+   *   CODE BLOCKS
+   *
+   */
+  pre
+  {
+    overflow-y: hidden;
+  }
+  code
+  {
+    padding-bottom: 24px;
+  }
+  
+
+  /*   *****************************************************
+   *
+   *   BLOCK: FACETS IN SEARCH RESULTS
+   *
+   */
+  .facets-subset h3
+  {
+    clear: left;
+  }
+  .facets-subset li,
+  .facets-subset div
+  {
+    zoom: 1;
+  }
+  .js-on .facets .facets-subset .facet-subset-toggle
+  {
+    float: none;
+    margin-bottom: 0 !important;
+  }
+  .facets-subset #facets-period-form p
+  {
+    width: auto;
+    text-align: left;
+  }
+  .facets-subset #facets-period-form label
+  {
+    display: block;
+    width: auto;
+    float: none;
+  }
+  .facets-subset #form-period-from, .facets-subset #form-period-to
+  {
+    height: 1.5em;
+  }
+  .facets-subset #form-period-to
+  {
+    top: -1.65em;
+    margin-bottom: -1.65em;
+  }
+  .facets-subset #facets-period-form label.period-divider
+  {
+    margin-left: .8em;
+  }
+  .facets-subset .form-navigation
+  {
+    padding: 0 !important;
+  }  
+  .facets-subset form button
+  {
+    width: 11em;  
+    padding: 0;
+    text-align: center;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK PHOTO GALLERY
+   *   Used on photo gallery and article detail pages
+   *   
+   */
+  #content-column .block-photo-gallery
+  {
+    zoom: 1;
+  }
+  #content-column .block-photo-gallery ul
+  {
+    display: block;
+    width: 456px;
+    zoom: 1;
+    margin: 0 -20px 0 0;
+  }
+  .medium-wide #content-column .block-photo-gallery ul
+  {
+  	width: auto;
+  }
+  #content-column .block-photo-gallery .photo-credit
+  {
+    margin-top: 20px;
+  }
+  
+  
+  /*   *****************************************************
+   *
+   *   PHOTO GALLERY SLIDESHOW LIGHTBOX
+   *
+   */
+  #lightbox-nav-btnPrev, #lightbox-nav-btnNext
+  {
+  	zoom: 1;
+  }
+  
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   CONTENT VIDEOS
+   *   Style declarations for govvid video implementation
+   *   
+   */
+  .block-audio-video ul,
+  .block-audio-video li,
+  .block-audio-video li a
+  {
+    position: relative;
+    zoom: 1;
+  }
+  .block-audio-video
+  {
+    clear: left;
+  }
+  
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   LIST OF TOPICS (DEPARTMENT LANDING PAGE)
+   *
+   */
+  .landing #content-column .list-topics div,
+  .landing #content-column .list-topics .grid-column,
+  .landing #content-column .list-topics .grid-column-first
+  {
+    zoom: 1;
+  }
+  .landing #content-column .list-topics p.morelink a
+  {
+    zoom: 1;
+    clear: left;
+  }
+  
+  
+
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK FORM: CONTENT FORMS
+   *   Standard form blocks with error messages
+   *   
+   */
+  .block-form fieldset
+  {
+    zoom: 1;
+    position: relative;
+  }
+  .block-form fieldset p
+  {
+    zoom: 1;
+  } 
+  .block-form fieldset p label.form-radio input
+  {
+    margin-right: -4em;
+    vertical-align: middle;
+  }
+  .block-form fieldset .inline-field 
+  {
+    clear: left;
+  }
+  .block-form fieldset button,
+  .block-form fieldset.form-navigation input
+  {
+    zoom: 1;
+    overflow: visible;
+    margin-top: .4em;
+  }
+  .block-form fieldset.form-navigation
+  {
+    display: inline;
+  }
+  .block-form table
+  {
+    margin: 2em 0 0;
+  }
+  .block-form table th
+  {
+    width: 13.8em;
+  }
+  #main-box .block-form .info-message
+  {
+    zoom: 1;
+  }
+  .block-form input.date
+  {
+    color: #696969;
+  }
+  
+  .block-form fieldset.checklist .frequency label,
+  .block-form fieldset .form-radio-subfields,
+  .block-form fieldset .form-radio-subfields label
+  {
+    zoom: 1;
+  }
+  .block-form fieldset .form-radio-subfields
+  {
+    margin-left: 2em;
+  }
+  .block-form fieldset .form-radio-subfields label.form-radio
+  {
+    position: relative;
+    top: -1em;
+    left: 0; /* overrule relative positioning in main stylesheet */
+  }
+  
+  .block-form fieldset.checklist p.frequency input, 
+  .block-form fieldset p.multiple-choice input
+  {
+    vertical-align: top;
+  }
+  .block-form fieldset p.multiple-choice input
+  {
+    width: 1.5em;
+  }  
+  .block-form fieldset p input
+  {
+    padding: .2em 0;
+  }
+  .block-form fieldset p input,
+  .block-form fieldset p textarea
+  {
+    display: block;    /* Fixing inputs alignment by floating them */
+    float: left;
+    margin-right: -3px; /* Weirdest fix ever: removing this triggers duplicate content bug in IE7 (!) */
+  }
+  .block-form fieldset p textarea
+  {
+    padding: 0 !important;          /* No padding on textarea for autogrow to work! */
+  }
+  .block-form fieldset p .form-radio input
+  {
+    margin-right: 0;
+  }
+  fieldset.form-navigation a#form-navigation-change
+  {
+    line-height: 2;
+  }
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK DOWNLOAD (DOCUMENTS AND PUBLICATIONS)
+   *   
+   */
+  .block-download p.meta
+  {
+    clear: left;
+  }
+  .block-download p.download-link
+  {
+    zoom: 1;
+    line-height: 1.8;
+  }
+  .block-download .download-chunk p.download-link a
+  {
+    position: relative;
+    top: -.3em;
+    padding: .2em .7em .3em;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK LIST OF MINISTERS & SECRETARIES OF STATE
+   *   Ministers and secretaries of state list on
+   *   government people overview page.
+   *   
+   */
+  #content-column .list-government-people ul
+  {
+    margin: 2em 0;
+    width: 664px;
+  }
+  #main-column .list-government-people li
+  {
+    width: 208px;
+    height: 6em;
+    float: left;
+    position: relative;
+    margin: 0 0 2.64em 20px;
+    padding: 100px 0 0;
+    background-image: none;
+  }
+  #main-column .list-government-people li.first-of-line
+  {
+    margin-left: 0;
+  }
+  
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: GOVERNMENT CARROUSEL
+   *
+   */
+  #government-carrousel span#carrousel-previous
+  {
+    background-image: url(images/ie-icon-carrousel-previous.png) !important;
+  }
+  #government-carrousel span#carrousel-next
+  {
+    background-image: url(images/ie-icon-carrousel-next.png) !important;
+  }
+  
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: FILTER SEARCH RESULTS (OVERVIEW PAGES)
+   *
+   */
+  .block-form fieldset p.form-period-from-to
+  {
+    padding-right: 78px;
+    position: relative;
+  }
+  .block-form fieldset p.form-period-from-to label.period-divider
+  {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: left;
+    margin: 0 0 0 10px;
+  }
+  .medium-wide .block-form fieldset p.form-period-from-to label.period-divider,
+  .wide .block-form .search-summary p.form-period-from-to label.period-divider
+  {
+    margin: 0 0 0 28px;
+  }
+  .block-form fieldset p.form-period-from-to label
+  {
+    text-align: left;
+  }
+  .block-form fieldset #form-period-to
+  {
+    position: relative;
+    float: right;
+  }
+  .block-form fieldset #form-period-from
+  {
+    float: left;
+  }
+  #aside-column .list-publications,
+  #aside-column .list-publications ul,
+  #aside-column .list-publications li
+  {
+    position: relative;
+    z-index: 100;
+  }
+  #aside-column .list-publications p.cover
+  {
+    z-index: 100;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: CONTENT FORMS INFO MESSAGES FOR CHECKLISTS
+   *
+   */
+  .block-form fieldset.checklist p span
+  {
+    padding: .3em 11px .3em 9px;
+  }
+  .block-form fieldset.checklist p span input
+  {
+    border: none;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK TRIPLETS (MINISTER LANDING PAGE)
+   *   
+   */
+  #main-box .block-triplets ul li
+  {
+    zoom: 1;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   PAGE: NEWSLETTER ARCHIVE
+   *
+   */
+  .newsletter-archive .page-index h3
+  {
+    line-height: normal;
+  }
+  .newsletter-archive #content-column .page-articles h3 
+  {
+    line-height: normal;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK SPOTLIGHT ITEM
+   *   General item with grey or blue border and top bar.
+   *   
+   */
+  .block-spotlight-light,
+  .block-spotlight-dark
+  {
+    padding-bottom: 9px;
+  }
+
+
+
+
+  /*   *****************************************************
+   *
+   *   BLOCK: PUBLIC SERVICE INSTRUCTIONS FOR PB51
+   *
+   */
+  .search-results .pb51-extranet,
+  #main-column .list-faq ul li.pb51-extranet
+  {
+    position: relative;
+    zoom: 1;
+  }
+  .meta-pb51-extranet h3,
+  .pb51-extranet .search-results-short h2,
+  .pb51-extranet .search-paging
+	{
+		zoom: 1;
+	}
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   FILE UPLOAD: nice looking upload formfield
+   *
+   */
+  .js-on .file-upload
+  {
+    float: left;
+  }
+  .js-on .fake-file-upload input
+  {
+    margin-right: 0;
+    padding-bottom: .1em;
+  }
+  .js-on .fake-file-upload button
+  {
+    position: relative;
+    left: -1px;
+    padding-bottom: 0;
+    line-height: normal;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: ACTIONS WEBLOG
+   *   
+   */
+  #content-column .actions-weblog,
+  #content-column .paging-previous a,
+  #content-column .paging-next a
+  {
+    zoom: 1;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: MAGAZINE
+   *          New page type for startpage per sitebranch
+   *
+   */
+  #magazineboard,
+  #magazineboard .magazine-canvas,
+  #magazineboard p.payoff,
+  #magazine-carrousel .slide-intro,
+  #magazine-carrousel li,
+  #magazine-carrousel li a
+  {
+    zoom: 1;
+  }
+  .js-on #magazine-carrousel li em
+  {
+    top: 1px;
+  }
+  .js-on #magazine-carrousel ol,
+  .js-on #magazine-carrousel li,
+  .js-on #magazine-carrousel li div.slide
+  {
+    z-index: 100;
+  }
+  
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: SOLUTIONS FOLDABLE VERSION
+   *
+   */
+  .block-solutions-item-header,
+  .block-solutions-item-content
+  {
+  	zoom: 1;
+  	position: relative;
+  }
+  .block-solutions-item h4
+  {
+  	line-height: normal;
+  }
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: SORTING TABS AND NAV TABS
+   *
+   */
+  .list-sorting,
+  .list-sorting li,
+  .list-sorting li a,
+  .list-sorting li strong,
+  .list-tabs,
+  .list-tabs li,
+  .list-tabs li a,
+  .list-tabs li strong
+  {
+    position: relative;
+    zoom: 1;
+  }
+  .list-tabs
+  {
+    position: relative;
+    top: -32px;
+    margin-top: 0;
+    margin-bottom: -32px !important;
+  }
+
+
+  /*   *****************************************************
+   *
+   *   WOODSTOCK FIXES
+   *
+   */
+  .woodstock #main-box .block a.more,
+  .woodstock .news a.more
+  {
+    display: block;
+    float: none;
+    clear: left;
+  }
+  .woodstock #main-box .sharewrapper,
+  .woodstock #main-box .notifications,
+  .woodstock #main-box .sharing,
+  .woodstock .download-chunk,
+  .woodstock .download-chunk h2,
+  .woodstock .list-results a,
+  .woodstock .faqs .list-common a,
+  .woodstock .wayfinder,
+  .woodstock .content-topics-overview,
+  .woodstock .embassy-info
+  {
+    zoom: 1 !important;
+  }
+  .woodstock .news a.more
+  {
+    margin-top: 30px;
+  }
+  .woodstock #content-column .block-photo-gallery ul
+  {
+    width: 608px !important;
+  }
+  .woodstock #content-column h1
+  {
+    padding-top: .5em;
+  }
+
+
+  /*   *****************************************************
+   *
+   *   FORMS: WOODSTOCK FIXES
+   *
+   */
+  .js-on .woodstock .ui-datepicker-trigger-form-period-from
+  {
+    zoom: 1;
+    left: -18px;
+  }
+  .js-on .woodstock .ui-datepicker-trigger-form-period-to
+  {
+    zoom: 1;
+    position: absolute;
+    right: 76px;
+    top: .8em;
+    margin-right: 0;
+  }
+  .woodstock .block-form .search-summary p.form-period-from-to label.period-divider
+  {
+    margin: 0 0 0 20px;
+  }
+  .woodstock .block-form fieldset p select
+  {
+    float: left; /* This introduces duplicate content bug ... */
+    margin-left: -1px; /* ... which is fixed again by this line */
+  }
+  .woodstock .block-form fieldset.form-navigation
+  {
+    padding-left: 24px;
+  }
+  .woodstock #priority a div
+  {
+    zoom: 1;
+  }
+
+
+
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: DATEPICKER
+   *
+   */
+  .js-on #ui-datepicker-div
+  {
+    position: relative !important;
+    zoom: 1;
+  }
+  .js-on .ui-datepicker-trigger-form-period-from
+  {
+    zoom: 1;
+    left: -16px;
+  }
+  .js-on .ui-datepicker-trigger-form-period-to
+  {
+    zoom: 1;
+    position: absolute;
+    right: 76px;
+    top: .7em;
+    margin-right: 0;
+  }
+  .js-on .ui-datepicker-header-form-period-to {
+  	background-position: 10.8em 0;
+  }
+  
+
+  /*   *****************************************************
+   *
+   *   BLOCK: DATEPICKER IN FACETS
+   *
+   */
+  .js-on .facets .ui-datepicker-trigger-form-period-to
+  {
+    position: absolute;
+    right: -2px;
+    top: 2.5em;
+    margin-right: 0;
+  }
+  .js-on .facets .ui-datepicker-title
+  {
+    letter-spacing: -0.07em;
+  }
+  
+  
+  /*   *****************************************************
+   *
+   *   BLOCK: LEGISLATION PHASES
+   *
+   */
+  .js-on #content-column .legislation-calendar-phase
+  {
+    height: 5.9em;
+  }
+
+  .js-on .woodstock #main-box .choose-xl-box
+  {
+    zoom: 1;
+    margin-bottom: 4em;
+  }
+
+}
+/*   *******************************************************   END @MEDIA SCREEN FORMATTING     */
